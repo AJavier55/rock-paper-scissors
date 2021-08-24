@@ -28,36 +28,52 @@ const handOptions = {
   }
 
   const referee = (userHand, compHand) => {
-    if (userHand == "paper" && cpHand == "scissors") {
-        setDecision("YOU LOSE!");
+      if (userHand == "paper" && compHand == "scissors") {
+      setDecision("YOU LOSE!");
       }
-      if (userHand == "paper" && cpHand == "rock") {
+      if (userHand == "paper" && compHand == "rock") {
         setDecision("YOU WIN!");
         setScore(SCORE + 1);
       }
-      if (userHand == "paper" && cpHand == "paper") {
+      if (userHand == "paper" && compHand == "paper") {
         setDecision("It's a tie!");
       }
-      if (userHand == "rock" && cpHand == "scissors") {
+      if (userHand == "rock" && compHand == "scissors") {
         setDecision("YOU WIN!");
         setScore(SCORE + 1);
       }
-      if (userHand == "rock" && cpHand == "paper") {
+      if (userHand == "rock" && compHand == "paper") {
         setDecision("YOU LOSE!");
       }
-      if (userHand == "rock" && cpHand == "rock") {
+      if (userHand == "rock" && compHand == "rock") {
         setDecision("It's a tie!");
       }
-      if (userHand == "scissors" && cpHand == "scissors") {
+      if (userHand == "scissors" && compHand == "scissors") {
         setDecision("It's a tie!");
       }
-      if (userHand == "scissors" && cpHand == "rock") {
+      if (userHand == "scissors" && compHand == "rock") {
         setDecision("YOU LOSE!");
       }
-      if (userHand == "scissors" && cpHand == "paper") {
+      if (userHand == "scissors" && compHand == "paper") {
         setDecision("YOU WIN!");
         setScore(SCORE + 1);
       }
   };
 
+  const restartGame = () => {
+      let contest = document.querySelector(".contest");
+      contest.style.display = "none";
+
+      let hands = document.querySelector(".hands");
+      hands.style.display = "flex";
+  }
+
+  const setDecision = (decision) => {
+      document.querySelector(".decision h1").innerText = decision
+  }
+
+  const setScore= (newScore) => {
+      SCORE = newScore;
+      document.querySelector(".score h1").innerText = newScore;
+  }
   
